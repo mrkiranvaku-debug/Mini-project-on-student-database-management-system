@@ -1,263 +1,545 @@
 # Student Management System
 
+**Project Type:** College Mini-Project
+**Application:** Web-Based Student Management System
+
+---
+
 ## 1. Project Overview
 
-The Student Management System is a web-based application designed to manage student academic and basic administrative information in a college environment.
+The Student Management System is a web-based application designed to manage student academic information in a college environment.
 
-The system provides separate access for students and administrators. Students can view their academic information, while administrators can manage student records and related academic data.
+The system provides two types of users:
+
+* Student
+* Teacher
+
+Students can view their academic information, while teachers can manage student-related academic information such as courses, marks, and attendance.
+
+The application will use a web-based frontend, a Java Spring Boot backend, and a MySQL database.
 
 ---
 
 ## 2. Objectives
 
-* Provide a centralized system for managing student information.
-* Allow students to securely access their academic details.
-* Allow administrators to add, view, update, and delete student records.
-* Manage departments and courses.
-* Manage student course enrollment.
-* Maintain student marks and attendance information.
-* Store and retrieve information using a MySQL database.
-* Provide a simple and user-friendly web interface.
+The main objectives of the system are:
+
+* To maintain student information in a centralized database.
+* To provide students with access to their academic information.
+* To allow teachers to manage student academic records.
+* To manage courses and student enrollments.
+* To manage marks and attendance.
+* To provide Create, Read, Update, and Delete (CRUD) operations.
+* To demonstrate frontend and backend integration.
+* To demonstrate SQL database design and connectivity.
+* To provide a simple and user-friendly interface.
 
 ---
 
 ## 3. User Roles
 
+The system will have two user roles.
+
 ### 3.1 Student
 
-Students can:
+Students will log in using:
 
-* Login using their register number and password.
-* View their profile.
-* View enrolled courses.
-* View marks/results.
-* View attendance.
-* Logout.
+* Register Number
+* Password
 
-### 3.2 Administrator
+Students will primarily have access to their own information.
 
-Administrators can:
+### 3.2 Teacher
 
-* Login to the administration portal.
-* Add student records.
-* View student records.
-* Update student records.
-* Delete student records.
-* Manage departments.
-* Manage courses.
-* Manage student enrollments.
-* Manage marks and attendance.
+Teachers will log in using:
+
+* Teacher ID
+* Password
+
+Teachers will have access to student-related academic management features.
 
 ---
 
-## 4. Student Portal
+# 4. Student Portal
 
-The student portal will contain:
+After successful login, the student will be taken to the Student Dashboard.
 
-1. Login
-2. Dashboard
-3. My Profile
-4. My Courses
-5. Enrollment
-6. Marks / Results
-7. Attendance
-8. Logout
+### 4.1 Student Login
 
-Students will primarily have **view access** to their academic information.
+The login page will contain:
 
----
+* Register Number
+* Password
+* Login button
 
-## 5. Administrator Portal
+There will be no public student registration option because student accounts are assumed to be created by the college.
 
-The administrator portal will contain:
+### 4.2 Student Dashboard
 
-1. Admin Login
-2. Dashboard
-3. Student Management
-4. Department Management
-5. Course Management
-6. Enrollment Management
-7. Marks Management
-8. Attendance Management
-9. Logout
+The dashboard will display basic information such as:
 
-The administrator will have CRUD operations where applicable.
+* Student name
+* Register number
+* Department
+* Year/Semester
+* Course summary
+* Attendance summary
+* Academic performance summary
 
----
+### 4.3 Student Profile
 
-## 6. Main Functional Requirements
+Students can view:
 
-### Student Management
+* Register number
+* Name
+* Email
+* Phone
+* Department
+* Year
+* Semester
 
-The system shall allow the administrator to:
+Important academic information will be view-only.
 
-* Add a student.
-* View student details.
-* Update student details.
-* Delete a student.
-* Search for a student.
+### 4.4 My Courses
 
-### Department Management
+Students can view the courses in which they are enrolled.
 
-The system shall allow the administrator to:
+Information may include:
 
-* Add departments.
-* View departments.
-* Update departments.
-* Delete departments.
+* Course code
+* Course name
+* Credits
+* Semester
 
-### Course Management
+### 4.5 Enrollment
 
-The system shall allow the administrator to:
+Students can view their course enrollment information.
 
-* Add courses.
-* View courses.
-* Update courses.
-* Delete courses.
+### 4.6 Marks / Results
 
-### Enrollment Management
+Students can view their academic marks and results.
 
-The system shall allow the administrator to:
+Information may include:
 
-* Enroll a student in a course.
-* View enrollment details.
-* Update enrollment information.
-* Remove an enrollment.
+* Course
+* Internal marks
+* External marks
+* Total marks
+* Grade
 
-### Marks Management
+### 4.7 Attendance
 
-The system shall allow the administrator to:
+Students can view attendance information for their courses.
 
-* Add marks.
-* View marks.
-* Update marks.
-* Delete marks.
+### 4.8 Logout
 
-### Attendance Management
-
-The system shall allow the administrator to:
-
-* Add attendance information.
-* View attendance.
-* Update attendance.
-* Delete attendance records.
+Students can log out of the application.
 
 ---
 
-## 7. Database Requirements
+# 5. Teacher Portal
 
-The system will use MySQL as the database.
+After successful login, the teacher will be taken to the Teacher Dashboard.
 
-The database will maintain information related to:
+### 5.1 Teacher Login
+
+The login page will contain:
+
+* Teacher ID
+* Password
+* Login button
+
+### 5.2 Teacher Dashboard
+
+The dashboard will provide access to academic management features.
+
+### 5.3 Student Management
+
+Teachers can:
+
+* Add student records
+* View student records
+* Update student records
+* Delete student records
+* Search student records
+
+### 5.4 Department Management
+
+Teachers can:
+
+* View departments
+* Add departments
+* Update departments
+* Delete departments
+
+### 5.5 Course Management
+
+Teachers can:
+
+* Add courses
+* View courses
+* Update courses
+* Delete courses
+
+### 5.6 Enrollment Management
+
+Teachers can:
+
+* Enroll students in courses
+* View enrollments
+* Update enrollment information
+* Remove enrollments
+
+### 5.7 Marks Management
+
+Teachers can:
+
+* Add marks
+* View marks
+* Update marks
+* Delete marks
+
+### 5.8 Attendance Management
+
+Teachers can:
+
+* Add attendance records
+* View attendance
+* Update attendance
+* Delete attendance records
+
+### 5.9 Logout
+
+Teachers can log out of the application.
+
+---
+
+# 6. Main Functional Modules
+
+The main modules of the application are:
+
+1. Authentication
+2. Student Management
+3. Department Management
+4. Course Management
+5. Enrollment Management
+6. Marks Management
+7. Attendance Management
+
+These modules will be implemented according to the project's requirements and database design.
+
+---
+
+# 7. CRUD Requirements
+
+The system will demonstrate the four basic database operations:
+
+### Create
+
+Add new:
 
 * Students
 * Departments
 * Courses
 * Enrollments
 * Marks
+* Attendance records
+
+### Read
+
+View:
+
+* Student information
+* Department information
+* Course information
+* Enrollment information
+* Marks
 * Attendance
-* User accounts
 
-The database design will include appropriate primary keys, foreign keys, constraints, and relationships.
+### Update
 
-The final database design will be normalized up to **Third Normal Form (3NF)**.
+Modify existing records.
+
+### Delete
+
+Remove existing records where appropriate.
+
+The CRUD functionality will primarily be demonstrated through the teacher-side management features.
 
 ---
 
-## 8. Technology Stack
+# 8. Database Requirements
 
-### Frontend
+The application will use **MySQL** as its database.
+
+The database will contain information related to:
+
+* Students
+* Teachers
+* Departments
+* Courses
+* Enrollments
+* Marks
+* Attendance
+
+Appropriate:
+
+* Primary keys
+* Foreign keys
+* Constraints
+* Relationships
+
+will be used.
+
+The database will be designed and normalized up to:
+
+* First Normal Form (1NF)
+* Second Normal Form (2NF)
+* Third Normal Form (3NF)
+
+The final database structure will be documented as part of the project.
+
+---
+
+# 9. Application Architecture
+
+The application will follow a basic three-layer architecture:
+
+```text
+┌──────────────────────────────┐
+│          Frontend            │
+│      HTML + CSS + JavaScript  │
+└──────────────┬───────────────┘
+               │
+               │ REST API
+               ▼
+┌──────────────────────────────┐
+│           Backend            │
+│      Java + Spring Boot      │
+└──────────────┬───────────────┘
+               │
+               │ Database Access
+               ▼
+┌──────────────────────────────┐
+│          Database            │
+│            MySQL             │
+└──────────────────────────────┘
+```
+
+---
+
+# 10. Technology Stack
+
+## Frontend
 
 * HTML
 * CSS
 * JavaScript
 
-### Backend
+## Backend
 
 * Java
 * Spring Boot
 
-### Database
+## Database
 
 * MySQL
 * MySQL Workbench
 
-### Development Environment
+## Development Environment
 
 * Visual Studio Code
 
-### Version Control
+## Version Control
 
 * Git
 * GitHub
 
-### Deployment
+## Deployment
 
 * Vercel — Frontend
-* Aiven — Backend / MySQL
+* Aiven — Backend
+* Aiven MySQL — Database
 
 ---
 
-## 9. Application Architecture
+# 11. Frontend Requirements
 
-The application will follow a basic three-layer architecture:
+The frontend should provide:
+
+* Login pages
+* Student dashboard
+* Teacher dashboard
+* Navigation
+* Forms for data entry
+* Tables for displaying records
+* Search functionality
+* Form validation
+* Success and error messages
+* Responsive layout
+
+The frontend will communicate with the backend using REST API requests.
+
+---
+
+# 12. Backend Requirements
+
+The backend will be developed using Java and Spring Boot.
+
+It will provide:
+
+* REST APIs
+* Authentication endpoints
+* Student management operations
+* Department management operations
+* Course management operations
+* Enrollment management operations
+* Marks management operations
+* Attendance management operations
+* Database connectivity
+* Input validation
+* Appropriate error responses
+
+---
+
+# 13. Database Connectivity
+
+The Spring Boot backend will communicate with the MySQL database.
+
+The overall data flow will be:
 
 ```text
+User
+  ↓
 Frontend
-HTML + CSS + JavaScript
-        │
-        │ REST API
-        ▼
-Backend
-Java + Spring Boot
-        │
-        │ Database Access
-        ▼
-Database
+  ↓
+REST API
+  ↓
+Spring Boot
+  ↓
+Database Access
+  ↓
 MySQL
 ```
 
----
-
-## 10. CRUD Requirements
-
-The application shall demonstrate the following database operations:
-
-* **Create** — Add records.
-* **Read** — View records.
-* **Update** — Modify records.
-* **Delete** — Remove records.
-
-These operations will primarily be demonstrated through the administrator portal.
+The database will store and retrieve the application data required by the frontend.
 
 ---
 
-## 11. Non-Functional Requirements
+# 14. Initial Authentication Requirements
 
-* The interface should be simple and user-friendly.
-* The application should provide appropriate validation for user input.
-* Database relationships should maintain data consistency.
-* The application should provide meaningful error messages.
-* The system should be responsive on common screen sizes.
-* The project should be maintained using Git and GitHub.
+### Student
+
+```text
+Register Number
+Password
+```
+
+### Teacher
+
+```text
+Teacher ID
+Password
+```
+
+The backend will verify the submitted credentials against the database and return an appropriate success or failure response.
+
+For this mini-project prototype, advanced authentication features are outside the initial scope.
 
 ---
 
-## 12. Project Scope
+# 15. Non-Functional Requirements
 
-This project is intended as a college mini-project. The system will focus on the core functionality required for student information and academic management.
+The system should:
 
-Advanced college ERP features such as fee management, hostel management, transportation, library management, and online payments are outside the initial scope.
+* Have a simple and user-friendly interface.
+* Provide basic responsive design.
+* Validate user input.
+* Maintain database consistency.
+* Provide meaningful error messages.
+* Avoid unnecessary duplication of data.
+* Follow a clear project structure.
+* Maintain the source code using Git and GitHub.
 
 ---
 
-## 13. Future Enhancements
+# 16. Project Scope
 
-Possible future enhancements include:
+This project is intended to be a **college mini-project**.
 
-* Faculty management.
-* Timetable management.
-* Email notifications.
-* Advanced reports and analytics.
-* Mobile application.
-* More detailed role-based access control.
+The system will focus on the core requirements of student academic management.
+
+The initial project will include:
+
+* Student login
+* Teacher login
+* Student information
+* Departments
+* Courses
+* Enrollment
+* Marks
+* Attendance
+* CRUD operations
+* MySQL database
+* Frontend/backend integration
+
+The following features are outside the initial scope:
+
+* Fee management
+* Hostel management
+* Transport management
+* Library management
+* Online payment
+* Parent portal
+* Mobile application
+* Advanced notification systems
+* Complex role-based access control
+
+---
+
+# 17. Documentation Requirements
+
+The project documentation will contain:
+
+* Project requirements
+* ER diagram
+* Database design
+* Normalization
+* Module description
+* API documentation
+* SQL queries
+* Database connectivity details
+* Application screenshots
+* Sample outputs
+* Conclusion
+
+---
+
+# 18. Project Repository Structure
+
+The initial repository structure will be:
+
+```text
+student-management-system/
+│
+├── frontend/
+│
+├── backend/
+│
+├── database/
+│
+├── docs/
+│   └── requirements.md
+│
+├── README.md
+│
+└── .gitignore
+```
+
+Additional documentation and project files will be added as development progresses.
+
+---
+
+# 19. Project Development Workflow
+
+The project will be developed collaboratively using Git and Git
