@@ -1,0 +1,263 @@
+# Student Management System
+
+## 1. Project Overview
+
+The Student Management System is a web-based application designed to manage student academic and basic administrative information in a college environment.
+
+The system provides separate access for students and administrators. Students can view their academic information, while administrators can manage student records and related academic data.
+
+---
+
+## 2. Objectives
+
+* Provide a centralized system for managing student information.
+* Allow students to securely access their academic details.
+* Allow administrators to add, view, update, and delete student records.
+* Manage departments and courses.
+* Manage student course enrollment.
+* Maintain student marks and attendance information.
+* Store and retrieve information using a MySQL database.
+* Provide a simple and user-friendly web interface.
+
+---
+
+## 3. User Roles
+
+### 3.1 Student
+
+Students can:
+
+* Login using their register number and password.
+* View their profile.
+* View enrolled courses.
+* View marks/results.
+* View attendance.
+* Logout.
+
+### 3.2 Administrator
+
+Administrators can:
+
+* Login to the administration portal.
+* Add student records.
+* View student records.
+* Update student records.
+* Delete student records.
+* Manage departments.
+* Manage courses.
+* Manage student enrollments.
+* Manage marks and attendance.
+
+---
+
+## 4. Student Portal
+
+The student portal will contain:
+
+1. Login
+2. Dashboard
+3. My Profile
+4. My Courses
+5. Enrollment
+6. Marks / Results
+7. Attendance
+8. Logout
+
+Students will primarily have **view access** to their academic information.
+
+---
+
+## 5. Administrator Portal
+
+The administrator portal will contain:
+
+1. Admin Login
+2. Dashboard
+3. Student Management
+4. Department Management
+5. Course Management
+6. Enrollment Management
+7. Marks Management
+8. Attendance Management
+9. Logout
+
+The administrator will have CRUD operations where applicable.
+
+---
+
+## 6. Main Functional Requirements
+
+### Student Management
+
+The system shall allow the administrator to:
+
+* Add a student.
+* View student details.
+* Update student details.
+* Delete a student.
+* Search for a student.
+
+### Department Management
+
+The system shall allow the administrator to:
+
+* Add departments.
+* View departments.
+* Update departments.
+* Delete departments.
+
+### Course Management
+
+The system shall allow the administrator to:
+
+* Add courses.
+* View courses.
+* Update courses.
+* Delete courses.
+
+### Enrollment Management
+
+The system shall allow the administrator to:
+
+* Enroll a student in a course.
+* View enrollment details.
+* Update enrollment information.
+* Remove an enrollment.
+
+### Marks Management
+
+The system shall allow the administrator to:
+
+* Add marks.
+* View marks.
+* Update marks.
+* Delete marks.
+
+### Attendance Management
+
+The system shall allow the administrator to:
+
+* Add attendance information.
+* View attendance.
+* Update attendance.
+* Delete attendance records.
+
+---
+
+## 7. Database Requirements
+
+The system will use MySQL as the database.
+
+The database will maintain information related to:
+
+* Students
+* Departments
+* Courses
+* Enrollments
+* Marks
+* Attendance
+* User accounts
+
+The database design will include appropriate primary keys, foreign keys, constraints, and relationships.
+
+The final database design will be normalized up to **Third Normal Form (3NF)**.
+
+---
+
+## 8. Technology Stack
+
+### Frontend
+
+* HTML
+* CSS
+* JavaScript
+
+### Backend
+
+* Java
+* Spring Boot
+
+### Database
+
+* MySQL
+* MySQL Workbench
+
+### Development Environment
+
+* Visual Studio Code
+
+### Version Control
+
+* Git
+* GitHub
+
+### Deployment
+
+* Vercel — Frontend
+* Aiven — Backend / MySQL
+
+---
+
+## 9. Application Architecture
+
+The application will follow a basic three-layer architecture:
+
+```text
+Frontend
+HTML + CSS + JavaScript
+        │
+        │ REST API
+        ▼
+Backend
+Java + Spring Boot
+        │
+        │ Database Access
+        ▼
+Database
+MySQL
+```
+
+---
+
+## 10. CRUD Requirements
+
+The application shall demonstrate the following database operations:
+
+* **Create** — Add records.
+* **Read** — View records.
+* **Update** — Modify records.
+* **Delete** — Remove records.
+
+These operations will primarily be demonstrated through the administrator portal.
+
+---
+
+## 11. Non-Functional Requirements
+
+* The interface should be simple and user-friendly.
+* The application should provide appropriate validation for user input.
+* Database relationships should maintain data consistency.
+* The application should provide meaningful error messages.
+* The system should be responsive on common screen sizes.
+* The project should be maintained using Git and GitHub.
+
+---
+
+## 12. Project Scope
+
+This project is intended as a college mini-project. The system will focus on the core functionality required for student information and academic management.
+
+Advanced college ERP features such as fee management, hostel management, transportation, library management, and online payments are outside the initial scope.
+
+---
+
+## 13. Future Enhancements
+
+Possible future enhancements include:
+
+* Faculty management.
+* Timetable management.
+* Email notifications.
+* Advanced reports and analytics.
+* Mobile application.
+* More detailed role-based access control.
