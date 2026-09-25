@@ -110,9 +110,53 @@ loginForm.addEventListener("submit", async (event) => {
     return;
   }
 
-  /* Teacher Login - not connected yet */
+  /* Teacher Login */
 
   if (selectedRole === "TEACHER") {
-    loginMessage.textContent = "Teacher login API will be connected next.";
+    if (teacherId.value.trim() === "") {
+      loginMessage.textContent = "Please enter your teacher ID.";
+      return;
+    }
+
+    if (password.value.trim() === "") {
+      loginMessage.textContent = "Please enter your password.";
+      return;
+    }
+
+    const loginData = {
+      teacherCode: teacherId.value.trim(),
+      password: password.value,
+    };
+
+    try {
+      loginMessage.textContent = "Logging in...";
+
+      const response = await fetch(
+        "http://localhost:8080/api/auth/teacher/login",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify(loginData),
+        },
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        loginMessage.textContent = data.message;
+
+        console.log("Teacher login successful:", data);
+      } else {
+        loginMessage.textContent = data.message || "Login failed.";
+      }
+    } catch (error) {
+      console.error("Teacher login error:", error);
+
+      loginMessage.textContent = "Unable to connect to the server.";
+    }
   }
 });
