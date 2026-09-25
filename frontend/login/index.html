@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System - Login</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="login-container">
+      <div class="login-card">
+        <h1>Student Management System</h1>
+        <p class="subtitle">Login to your account</p>
+
+        <!-- Role Selection -->
+        <div class="role-selector">
+          <button type="button" id="studentBtn" class="role-btn active">
+            Student
+          </button>
+
+          <button type="button" id="teacherBtn" class="role-btn">
+            Teacher
+          </button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm">
+          <!-- Student Register Number -->
+          <div class="form-group" id="registerNumberGroup">
+            <label for="registerNumber">Register Number</label>
+            <input
+              type="text"
+              id="registerNumber"
+              placeholder="Enter your register number"
+            />
+          </div>
+
+          <!-- Teacher ID -->
+          <div class="form-group hidden" id="teacherIdGroup">
+            <label for="teacherId">Teacher ID</label>
+            <input
+              type="text"
+              id="teacherId"
+              placeholder="Enter your teacher ID"
+            />
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+          </div>
+
+          <!-- Login Button -->
+          <button type="submit" class="login-btn">Login</button>
+
+          <!-- Message -->
+          <p id="loginMessage"></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
