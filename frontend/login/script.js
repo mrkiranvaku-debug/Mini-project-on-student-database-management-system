@@ -50,30 +50,69 @@ teacherBtn.addEventListener("click", () => {
 });
 
 /* -------------------------------
-   Login Form Validation
+   Login Form
 -------------------------------- */
 
-loginForm.addEventListener("submit", (event) => {
+loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   loginMessage.textContent = "";
+
+  /* Student Login */
 
   if (selectedRole === "STUDENT") {
     if (registerNumber.value.trim() === "") {
       loginMessage.textContent = "Please enter your register number.";
       return;
     }
-  } else {
-    if (teacherId.value.trim() === "") {
-      loginMessage.textContent = "Please enter your teacher ID.";
+
+    if (password.value.trim() === "") {
+      loginMessage.textContent = "Please enter your password.";
       return;
     }
-  }
 
-  if (password.value.trim() === "") {
-    loginMessage.textContent = "Please enter your password.";
+    const loginData = {
+      registerNumber: registerNumber.value.trim(),
+      password: password.value,
+    };
+
+    try {
+      loginMessage.textContent = "Logging in...";
+
+      const response = await fetch(
+        "http://localhost:8080/api/auth/student/login",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify(loginData),
+        },
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        loginMessage.textContent = data.message;
+
+        console.log("Student login successful:", data);
+      } else {
+        loginMessage.textContent = data.message || "Login failed.";
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+
+      loginMessage.textContent = "Unable to connect to the server.";
+    }
+
     return;
   }
 
-  loginMessage.textContent = "Validation successful.";
+  /* Teacher Login - not connected yet */
+
+  if (selectedRole === "TEACHER") {
+    loginMessage.textContent = "Teacher login API will be connected next.";
+  }
 });
