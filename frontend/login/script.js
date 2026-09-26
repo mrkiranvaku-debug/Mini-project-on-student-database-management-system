@@ -115,9 +115,6 @@ loginForm.addEventListener("submit", async (event) => {
 
     return;
   }
-
-  /* Teacher Login */
-
   if (selectedRole === "TEACHER") {
     if (teacherId.value.trim() === "") {
       loginMessage.textContent = "Please enter your teacher ID.";
@@ -155,7 +152,19 @@ loginForm.addEventListener("submit", async (event) => {
       if (response.ok) {
         loginMessage.textContent = data.message;
 
+        /*
+         * Store the complete teacher session
+         */
+
+        localStorage.setItem("teacher", JSON.stringify(data.teacher));
+
         console.log("Teacher login successful:", data);
+
+        /*
+         * Open Teacher Dashboard
+         */
+
+        window.location.href = "../teacher/dashboard/index.html";
       } else {
         loginMessage.textContent = data.message || "Login failed.";
       }
@@ -164,5 +173,7 @@ loginForm.addEventListener("submit", async (event) => {
 
       loginMessage.textContent = "Unable to connect to the server.";
     }
+
+    return;
   }
 });

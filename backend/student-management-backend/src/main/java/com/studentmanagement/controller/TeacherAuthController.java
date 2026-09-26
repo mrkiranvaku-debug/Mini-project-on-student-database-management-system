@@ -18,22 +18,34 @@ public class TeacherAuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody Map<String, String> request) {
+    public ResponseEntity<?> login(
+            @RequestBody Map<String, String> request) {
 
         String teacherCode = request.get("teacherCode");
         String password = request.get("password");
 
-        Teacher teacher = teacherService.login(teacherCode, password);
+        Teacher teacher =
+                teacherService.login(teacherCode, password);
 
         if (teacher != null) {
+
             return ResponseEntity.ok(
                     Map.of(
                             "success", true,
                             "message", "Login successful",
+
                             "teacher", Map.of(
-                                    "teacherCode", teacher.getTeacherCode(),
-                                    "name", teacher.getName(),
-                                    "role", "TEACHER"
+                                    "teacherId",
+                                    teacher.getTeacherId(),
+
+                                    "teacherCode",
+                                    teacher.getTeacherCode(),
+
+                                    "name",
+                                    teacher.getName(),
+
+                                    "role",
+                                    "TEACHER"
                             )
                     )
             );
@@ -42,7 +54,8 @@ public class TeacherAuthController {
         return ResponseEntity.status(401).body(
                 Map.of(
                         "success", false,
-                        "message", "Invalid teacher ID or password"
+                        "message",
+                        "Invalid teacher ID or password"
                 )
         );
     }
