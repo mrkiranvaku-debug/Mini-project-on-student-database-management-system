@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <div class="brand-icon">S</div>
+          <span>Student Hub</span>
+        </div>
+
+        <button class="close-sidebar" id="closeSidebar">×</button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <span class="nav-label">Overview</span>
+
+          <a href="#" class="nav-item active">
+            <span>⌂</span>
+            <span>Dashboard</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">Academics</span>
+
+          <a href="#" class="nav-item">
+            <span>▣</span>
+            <span>My Courses</span>
+          </a>
+
+          <a href="#" class="nav-item">
+            <span>＋</span>
+            <span>Enrollment</span>
+          </a>
+
+          <a href="#" class="nav-item">
+            <span>◫</span>
+            <span>Results</span>
+          </a>
+
+          <a href="#" class="nav-item">
+            <span>◔</span>
+            <span>Attendance</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">Account</span>
+
+          <a href="#" class="nav-item">
+            <span>◎</span>
+            <span>My Profile</span>
+          </a>
+
+          <a href="#" class="nav-item">
+            <span>⚙</span>
+            <span>Settings</span>
+          </a>
+
+          <a href="#" class="nav-item logout-item" id="logoutBtn">
+            <span>↪</span>
+            <span>Logout</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Application -->
+    <div class="app">
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-button" id="menuButton">☰</button>
+
+          <div class="topbar-brand">
+            <div class="brand-mark">S</div>
+            <span>Student Management System</span>
+          </div>
+        </div>
+
+        <div class="topbar-center">
+          <div class="search-box">
+            <span>⌕</span>
+
+            <input type="text" placeholder="Search anything..." />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="icon-button">♢</button>
+
+          <div class="profile">
+            <div class="profile-avatar" id="profileAvatar">A</div>
+
+            <div class="profile-info">
+              <strong id="studentName">Loading...</strong>
+              <span id="studentRegisterNumber">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <main class="dashboard">
+        <!-- Academic Metrics -->
+        <section class="metrics-section">
+          <div class="metric-card">
+            <div class="metric-header">
+              <span>Attendance</span>
+              <span class="metric-icon">◔</span>
+            </div>
+
+            <div class="circular-progress attendance-progress">
+              <div class="progress-inner">
+                <strong id="attendanceValue">--%</strong>
+                <span>Attendance</span>
+              </div>
+            </div>
+
+            <p>Overall attendance</p>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span>Courses</span>
+              <span class="metric-icon">▣</span>
+            </div>
+
+            <div class="circular-progress courses-progress">
+              <div class="progress-inner">
+                <strong id="coursesValue">--</strong>
+                <span>Courses</span>
+              </div>
+            </div>
+
+            <p id="coursesDescription">Loading courses</p>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span>GPA</span>
+              <span class="metric-icon">★</span>
+            </div>
+
+            <div class="circular-progress gpa-progress">
+              <div class="progress-inner">
+                <strong id="gpaValue">--</strong>
+                <span>GPA</span>
+              </div>
+            </div>
+
+            <p>Current academic performance</p>
+          </div>
+        </section>
+
+        <!-- Lower Dashboard -->
+        <section class="dashboard-grid">
+          <!-- Courses -->
+          <div class="dashboard-card courses-card">
+            <div class="card-header">
+              <div>
+                <span class="eyebrow">ACADEMICS</span>
+                <h2>My Courses</h2>
+              </div>
+
+              <button class="card-action">View all</button>
+            </div>
+
+            <div class="course-list" id="courseList">
+              <div class="loading-state">Loading courses...</div>
+            </div>
+          </div>
+
+          <!-- Today's Schedule -->
+          <div class="dashboard-card schedule-card">
+            <div class="card-header">
+              <div>
+                <span class="eyebrow">TODAY</span>
+                <h2>Today's Schedule</h2>
+              </div>
+
+              <span class="date-label" id="currentDate"></span>
+            </div>
+
+            <div class="schedule-list">
+              <div class="schedule-item">
+                <div class="schedule-time">09:00</div>
+
+                <div class="schedule-line"></div>
+
+                <div class="schedule-content">
+                  <strong>Data Structures</strong>
+                  <span>Room 204 · 9:00 AM – 10:00 AM</span>
+                </div>
+              </div>
+
+              <div class="schedule-item">
+                <div class="schedule-time">11:00</div>
+
+                <div class="schedule-line"></div>
+
+                <div class="schedule-content">
+                  <strong>Database Management</strong>
+                  <span>Lab 3 · 11:00 AM – 12:00 PM</span>
+                </div>
+              </div>
+
+              <div class="schedule-item">
+                <div class="schedule-time">14:00</div>
+
+                <div class="schedule-line"></div>
+
+                <div class="schedule-content">
+                  <strong>Computer Networks</strong>
+                  <span>Room 301 · 2:00 PM – 3:00 PM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Academic Activity -->
+        <section class="dashboard-card activity-card">
+          <div class="card-header">
+            <div>
+              <span class="eyebrow">RECENT</span>
+              <h2>Academic Activity</h2>
+            </div>
+
+            <button class="card-action">View activity</button>
+          </div>
+
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon">✓</div>
+
+              <div>
+                <strong>Results updated</strong>
+                <span>Your latest course results are available.</span>
+              </div>
+
+              <time>Today</time>
+            </div>
+
+            <div class="activity-item">
+              <div class="activity-icon">◔</div>
+
+              <div>
+                <strong>Attendance recorded</strong>
+                <span>Your attendance has been updated.</span>
+              </div>
+
+              <time>Yesterday</time>
+            </div>
+
+            <div class="activity-item">
+              <div class="activity-icon">▣</div>
+
+              <div>
+                <strong>Course enrollment</strong>
+                <span>Your current semester courses are active.</span>
+              </div>
+
+              <time>2 days ago</time>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
