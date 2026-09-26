@@ -1,5 +1,10 @@
-const API_URL = "http://localhost:8080/api/dashboard/student/1";
+const student = JSON.parse(localStorage.getItem("student"));
 
+if (!student || !student.studentId) {
+  window.location.href = "../login/index.html";
+}
+
+const API_URL = `http://localhost:8080/api/dashboard/student/${student.studentId}`;
 const sidebar = document.getElementById("sidebar");
 const sidebarOverlay = document.getElementById("sidebarOverlay");
 const menuButton = document.getElementById("menuButton");
@@ -225,6 +230,10 @@ function displayCurrentDate() {
 logoutBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
+  // Remove logged-in student information
+  localStorage.removeItem("student");
+
+  // Return to login page
   window.location.href = "../login/index.html";
 });
 

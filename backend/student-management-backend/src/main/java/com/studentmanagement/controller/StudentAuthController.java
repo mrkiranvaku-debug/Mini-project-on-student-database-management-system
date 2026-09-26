@@ -31,6 +31,7 @@ public class StudentAuthController {
                             "success", true,
                             "message", "Login successful",
                             "student", Map.of(
+                                     "studentId", student.getStudentId(),
                                     "registerNumber", student.getRegisterNumber(),
                                     "name", student.getName(),
                                     "role", "STUDENT"
