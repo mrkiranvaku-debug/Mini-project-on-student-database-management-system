@@ -97,7 +97,13 @@ loginForm.addEventListener("submit", async (event) => {
       if (response.ok) {
         loginMessage.textContent = data.message;
 
+        // Store logged-in student information
+        localStorage.setItem("student", JSON.stringify(data.student));
+
         console.log("Student login successful:", data);
+
+        // Open student dashboard
+        window.location.href = "../dashboard/index.html";
       } else {
         loginMessage.textContent = data.message || "Login failed.";
       }
