@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Attendance | Student Hub</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="brand-icon">S</div>
+
+          <div>
+            <strong>Student Hub</strong>
+            <span>Academic Portal</span>
+          </div>
+        </div>
+
+        <button class="close-sidebar" id="closeSidebar">×</button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <span class="nav-label">OVERVIEW</span>
+
+          <a href="../index.html" class="nav-item">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">ACADEMICS</span>
+
+          <a href="../courses/index.html" class="nav-item">
+            <span class="nav-icon">▣</span>
+            <span>My Courses</span>
+          </a>
+
+          <a href="../enrollment/index.html" class="nav-item">
+            <span class="nav-icon">＋</span>
+            <span>Enrollment</span>
+          </a>
+
+          <a href="../results/index.html" class="nav-item">
+            <span class="nav-icon">◫</span>
+            <span>Results</span>
+          </a>
+
+          <a href="index.html" class="nav-item active">
+            <span class="nav-icon">◔</span>
+            <span>Attendance</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">ACCOUNT</span>
+
+          <a href="../profile/index.html" class="nav-item">
+            <span class="nav-icon">◎</span>
+            <span>My Profile</span>
+          </a>
+
+          <a href="../settings/index.html" class="nav-item">
+            <span class="nav-icon">⚙</span>
+            <span>Settings</span>
+          </a>
+
+          <a href="#" class="nav-item logout-item" id="logoutBtn">
+            <span class="nav-icon">↪</span>
+            <span>Logout</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- APPLICATION -->
+    <div class="app-shell">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-button" id="menuButton">☰</button>
+
+          <div class="topbar-title">STUDENT MANAGEMENT SYSTEM</div>
+        </div>
+
+        <div class="topbar-profile">
+          <div class="profile-avatar" id="profileAvatar">S</div>
+
+          <div class="profile-info">
+            <strong id="studentName"> Loading... </strong>
+
+            <span id="studentRegisterNumber"> Loading... </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- PAGE -->
+      <main class="page-container">
+        <section class="page-header">
+          <div>
+            <span class="eyebrow"> ACADEMICS </span>
+
+            <h1>Attendance</h1>
+          </div>
+        </section>
+
+        <!-- SUMMARY -->
+        <section class="summary-grid">
+          <div class="summary-card">
+            <span class="summary-label"> Overall Attendance </span>
+
+            <strong id="overallAttendance"> -- </strong>
+
+            <span> Across all courses </span>
+          </div>
+
+          <div class="summary-card">
+            <span class="summary-label"> Classes Attended </span>
+
+            <strong id="classesAttended"> -- </strong>
+
+            <span> Total attended </span>
+          </div>
+
+          <div class="summary-card">
+            <span class="summary-label"> Classes Held </span>
+
+            <strong id="classesHeld"> -- </strong>
+
+            <span> Total classes </span>
+          </div>
+        </section>
+
+        <!-- ATTENDANCE -->
+        <section class="attendance-section">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow"> CURRENT SEMESTER </span>
+
+              <h2>Course Attendance</h2>
+            </div>
+
+            <span class="attendance-count" id="attendanceCount">
+              -- courses
+            </span>
+          </div>
+
+          <div id="attendanceList">
+            <div class="loading-state">Loading attendance records...</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
