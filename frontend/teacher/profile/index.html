@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | Student Hub</title>
+    <link rel="stylesheet" href="../dashboard/style.css" />
+    <style>
+      .profile-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .profile-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .avatar-large {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--primary-light, #e0e7ff);
+        color: var(--primary, #4f46e5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .info-group {
+        margin-bottom: 1.5rem;
+      }
+      .info-group label {
+        display: block;
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        margin-bottom: 0.25rem;
+      }
+      .info-group p {
+        font-size: 1.125rem;
+        color: var(--text-primary);
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="brand-icon">T</div>
+          <div>
+            <strong>Student Hub</strong>
+            <span>Teacher Portal</span>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <span class="nav-label">OVERVIEW</span>
+          <a href="../dashboard/index.html" class="nav-item">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-label">TEACHING</span>
+          <a href="../subjects/index.html" class="nav-item">
+            <span class="nav-icon">▣</span>
+            <span>My Subjects</span>
+          </a>
+          <a href="../enrollment/index.html" class="nav-item">
+            <span class="nav-icon">＋</span>
+            <span>Student Enrollment</span>
+          </a>
+          <a href="../attendance/index.html" class="nav-item">
+            <span class="nav-icon">◔</span>
+            <span>Attendance</span>
+          </a>
+          <a href="../results/index.html" class="nav-item">
+            <span class="nav-icon">◫</span>
+            <span>Marks & Results</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-label">STUDENTS</span>
+          <a href="../students/index.html" class="nav-item">
+            <span class="nav-icon">◎</span>
+            <span>My Students</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-label">ACCOUNT</span>
+          <a href="index.html" class="nav-item active">
+            <span class="nav-icon">◉</span>
+            <span>My Profile</span>
+          </a>
+          <a href="../settings/index.html" class="nav-item">
+            <span class="nav-icon">⚙</span>
+            <span>Settings</span>
+          </a>
+          <a href="#" class="nav-item logout-item" id="logoutBtn">
+            <span class="nav-icon">↪</span>
+            <span>Logout</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <span class="topbar-title">STUDENT MANAGEMENT SYSTEM</span>
+        </div>
+        <div class="topbar-profile">
+          <div class="profile-avatar" id="profileAvatar">T</div>
+          <div class="profile-info">
+            <strong id="teacherName">Loading...</strong>
+            <span id="teacherCode">Loading...</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="page-container">
+        <section class="page-header">
+          <span class="eyebrow">ACCOUNT</span>
+          <h1>My Profile</h1>
+        </section>
+
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="avatar-large" id="largeAvatar">T</div>
+            <div>
+              <h2 id="profName" style="margin: 0; color: var(--text-primary);">Loading...</h2>
+              <span id="profRole" style="color: var(--text-secondary);">Teacher</span>
+            </div>
+          </div>
+          
+          <div class="info-group">
+            <label>Teacher ID Code</label>
+            <p id="profCode">-</p>
+          </div>
+          
+          <div class="info-group">
+            <label>System Internal ID</label>
+            <p id="profId">-</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

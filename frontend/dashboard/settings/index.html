@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Settings | Student Hub</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="brand-icon">S</div>
+
+          <div>
+            <strong>Student Hub</strong>
+            <span>Academic Portal</span>
+          </div>
+        </div>
+
+        <button class="close-sidebar" id="closeSidebar">×</button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <span class="nav-label">OVERVIEW</span>
+
+          <a href="../index.html" class="nav-item">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">ACADEMICS</span>
+
+          <a href="../courses/index.html" class="nav-item">
+            <span class="nav-icon">▣</span>
+            <span>My Courses</span>
+          </a>
+
+          <a href="../enrollment/index.html" class="nav-item">
+            <span class="nav-icon">＋</span>
+            <span>Enrollment</span>
+          </a>
+
+          <a href="../results/index.html" class="nav-item">
+            <span class="nav-icon">◫</span>
+            <span>Results</span>
+          </a>
+
+          <a href="../attendance/index.html" class="nav-item">
+            <span class="nav-icon">◔</span>
+            <span>Attendance</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">ACCOUNT</span>
+
+          <a href="../profile/index.html" class="nav-item">
+            <span class="nav-icon">◎</span>
+            <span>My Profile</span>
+          </a>
+
+          <a href="index.html" class="nav-item active">
+            <span class="nav-icon">⚙</span>
+            <span>Settings</span>
+          </a>
+
+          <a href="#" class="nav-item logout-item" id="logoutBtn">
+            <span class="nav-icon">↪</span>
+            <span>Logout</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- APPLICATION -->
+    <div class="app-shell">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-button" id="menuButton">☰</button>
+
+          <div class="topbar-title">STUDENT MANAGEMENT SYSTEM</div>
+        </div>
+
+        <div class="topbar-profile">
+          <div class="profile-avatar" id="profileAvatar">S</div>
+
+          <div class="profile-info">
+            <strong id="studentName"> Loading... </strong>
+
+            <span id="studentRegisterNumber"> Loading... </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- PAGE -->
+      <main class="page-container">
+        <section class="page-header">
+          <div>
+            <span class="eyebrow"> ACCOUNT </span>
+
+            <h1>Settings</h1>
+          </div>
+        </section>
+
+        <!-- ACCOUNT SETTINGS -->
+        <section class="settings-section">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow"> ACCOUNT </span>
+
+              <h2>Account Settings</h2>
+            </div>
+          </div>
+
+          <div class="settings-list">
+            <div class="setting-item">
+              <div>
+                <strong>Student Account</strong>
+
+                <span> Your authenticated student account </span>
+              </div>
+
+              <span class="setting-value"> Active </span>
+            </div>
+
+            <div class="setting-item">
+              <div>
+                <strong>Password</strong>
+
+                <span> Your account password is protected </span>
+              </div>
+
+              <span class="setting-value"> Protected </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- APPEARANCE -->
+        <section class="settings-section">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow"> INTERFACE </span>
+
+              <h2>Appearance</h2>
+            </div>
+          </div>
+
+          <div class="settings-list">
+            <div class="setting-item">
+              <div>
+                <strong>Theme</strong>
+
+                <span> Choose your preferred interface theme </span>
+              </div>
+
+              <select id="themeSelect">
+                <option value="light">Light</option>
+
+                <option value="dark">Dark</option>
+              </select>
+            </div>
+
+            <div class="setting-item">
+              <div>
+                <strong>Compact Interface</strong>
+
+                <span> Reduce spacing across the interface </span>
+              </div>
+
+              <label class="toggle">
+                <input type="checkbox" id="compactToggle" />
+
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- NOTIFICATIONS -->
+        <section class="settings-section">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow"> NOTIFICATIONS </span>
+
+              <h2>Notification Preferences</h2>
+            </div>
+          </div>
+
+          <div class="settings-list">
+            <div class="setting-item">
+              <div>
+                <strong>Academic Updates</strong>
+
+                <span> Receive academic-related notifications </span>
+              </div>
+
+              <label class="toggle">
+                <input type="checkbox" id="academicNotifications" />
+
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div>
+                <strong>Course Updates</strong>
+
+                <span> Receive course and enrollment updates </span>
+              </div>
+
+              <label class="toggle">
+                <input type="checkbox" id="courseNotifications" />
+
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- SESSION -->
+        <section class="settings-section">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow"> SESSION </span>
+
+              <h2>Session Management</h2>
+            </div>
+          </div>
+
+          <div class="session-card">
+            <div>
+              <strong> Sign out of Student Hub </strong>
+
+              <p>You will be returned to the login page.</p>
+            </div>
+
+            <button class="logout-button" id="settingsLogout">Logout</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

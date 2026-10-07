@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Profile | Student Hub</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="brand-icon">S</div>
+
+          <div>
+            <strong>Student Hub</strong>
+            <span>Academic Portal</span>
+          </div>
+        </div>
+
+        <button class="close-sidebar" id="closeSidebar">×</button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <span class="nav-label">OVERVIEW</span>
+
+          <a href="../index.html" class="nav-item">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">ACADEMICS</span>
+
+          <a href="../courses/index.html" class="nav-item">
+            <span class="nav-icon">▣</span>
+            <span>My Courses</span>
+          </a>
+
+          <a href="../enrollment/index.html" class="nav-item">
+            <span class="nav-icon">＋</span>
+            <span>Enrollment</span>
+          </a>
+
+          <a href="../results/index.html" class="nav-item">
+            <span class="nav-icon">◫</span>
+            <span>Results</span>
+          </a>
+
+          <a href="../attendance/index.html" class="nav-item">
+            <span class="nav-icon">◔</span>
+            <span>Attendance</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">ACCOUNT</span>
+
+          <a href="index.html" class="nav-item active">
+            <span class="nav-icon">◎</span>
+            <span>My Profile</span>
+          </a>
+
+          <a href="../settings/index.html" class="nav-item">
+            <span class="nav-icon">⚙</span>
+            <span>Settings</span>
+          </a>
+
+          <a href="#" class="nav-item logout-item" id="logoutBtn">
+            <span class="nav-icon">↪</span>
+            <span>Logout</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- APPLICATION -->
+    <div class="app-shell">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-button" id="menuButton">☰</button>
+
+          <div class="topbar-title">STUDENT MANAGEMENT SYSTEM</div>
+        </div>
+
+        <div class="topbar-profile">
+          <div class="profile-avatar" id="headerAvatar">S</div>
+
+          <div class="profile-info">
+            <strong id="headerStudentName"> Loading... </strong>
+
+            <span id="headerRegisterNumber"> Loading... </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- PAGE -->
+      <main class="page-container">
+        <section class="page-header">
+          <div>
+            <span class="eyebrow"> ACCOUNT </span>
+
+            <h1>My Profile</h1>
+          </div>
+        </section>
+
+        <!-- PROFILE CARD -->
+        <section class="profile-card">
+          <div class="profile-cover"></div>
+
+          <div class="profile-main">
+            <div class="large-avatar" id="largeAvatar">S</div>
+
+            <div class="profile-heading">
+              <h2 id="profileName">Loading...</h2>
+
+              <p id="profileRegisterNumber">Loading...</p>
+            </div>
+
+            <span class="role-badge"> STUDENT </span>
+          </div>
+
+          <div class="profile-description">
+            <p>Student account information and academic identity details.</p>
+          </div>
+        </section>
+
+        <!-- INFORMATION -->
+        <section class="information-card">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow"> ACCOUNT INFORMATION </span>
+
+              <h2>Personal Details</h2>
+            </div>
+          </div>
+
+          <div class="details-grid">
+            <div class="detail-item">
+              <span>Name</span>
+
+              <strong id="detailName"> Loading... </strong>
+            </div>
+
+            <div class="detail-item">
+              <span>Register Number</span>
+
+              <strong id="detailRegisterNumber"> Loading... </strong>
+            </div>
+
+            <div class="detail-item">
+              <span>Role</span>
+
+              <strong id="detailRole"> STUDENT </strong>
+            </div>
+
+            <div class="detail-item">
+              <span>Account Status</span>
+
+              <strong class="active-status"> ● Active </strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECURITY -->
+        <section class="security-card">
+          <div>
+            <span class="eyebrow"> SECURITY </span>
+
+            <h2>Account Security</h2>
+
+            <p>
+              Your student account is protected by the Student Hub
+              authentication system.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

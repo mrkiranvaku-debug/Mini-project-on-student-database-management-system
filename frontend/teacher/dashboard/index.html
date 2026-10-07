@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Teacher Dashboard | Student Hub</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- SIDEBAR OVERLAY -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="brand-icon">T</div>
+
+          <div>
+            <strong>Student Hub</strong>
+            <span>Teacher Portal</span>
+          </div>
+        </div>
+
+        <button class="close-sidebar" id="closeSidebar">×</button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <!-- OVERVIEW -->
+
+        <div class="nav-section">
+          <span class="nav-label"> OVERVIEW </span>
+
+          <a href="index.html" class="nav-item active">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+          </a>
+        </div>
+
+        <!-- TEACHING -->
+
+        <div class="nav-section">
+          <span class="nav-label"> TEACHING </span>
+
+          <a href="../subjects/index.html" class="nav-item">
+            <span class="nav-icon">▣</span>
+            <span>My Subjects</span>
+          </a>
+
+          <a href="../enrollment/index.html" class="nav-item">
+            <span class="nav-icon">＋</span>
+            <span>Student Enrollment</span>
+          </a>
+
+          <a href="../attendance/index.html" class="nav-item">
+            <span class="nav-icon">◔</span>
+            <span>Attendance</span>
+          </a>
+
+          <a href="../results/index.html" class="nav-item">
+            <span class="nav-icon">◫</span>
+            <span>Marks & Results</span>
+          </a>
+        </div>
+
+        <!-- STUDENTS -->
+
+        <div class="nav-section">
+          <span class="nav-label"> STUDENTS </span>
+
+          <a href="../students/index.html" class="nav-item">
+            <span class="nav-icon">◎</span>
+            <span>My Students</span>
+          </a>
+        </div>
+
+        <!-- ACCOUNT -->
+
+        <div class="nav-section">
+          <span class="nav-label"> ACCOUNT </span>
+
+          <a href="../profile/index.html" class="nav-item">
+            <span class="nav-icon">◉</span>
+            <span>My Profile</span>
+          </a>
+
+          <a href="../settings/index.html" class="nav-item">
+            <span class="nav-icon">⚙</span>
+            <span>Settings</span>
+          </a>
+
+          <a href="#" class="nav-item logout-item" id="logoutBtn">
+            <span class="nav-icon">↪</span>
+            <span>Logout</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- APPLICATION -->
+
+    <div class="app-shell">
+      <!-- TOP BAR -->
+
+      <header class="topbar">
+        <div class="topbar-left">
+          <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open navigation"
+          >
+            ☰
+          </button>
+
+          <span class="topbar-title"> STUDENT MANAGEMENT SYSTEM </span>
+        </div>
+
+        <div class="topbar-profile">
+          <div class="profile-avatar" id="profileAvatar">T</div>
+
+          <div class="profile-info">
+            <strong id="teacherName"> Loading... </strong>
+
+            <span id="teacherCode"> Loading... </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+
+      <main class="page-container">
+        <section class="page-header">
+          <span class="eyebrow"> ACADEMIC OVERVIEW </span>
+
+          <h1>Teacher Dashboard</h1>
+        </section>
+
+        <!-- SUMMARY -->
+
+        <section class="summary-grid">
+          <div class="summary-card">
+            <span class="summary-label"> My Subjects </span>
+
+            <strong id="totalSubjects"> -- </strong>
+
+            <span> Assigned subjects </span>
+          </div>
+
+          <div class="summary-card">
+            <span class="summary-label"> Students </span>
+
+            <strong id="totalStudents"> -- </strong>
+
+            <span> Unique students </span>
+          </div>
+
+          <div class="summary-card">
+            <span class="summary-label"> Enrollments </span>
+
+            <strong id="totalEnrollments"> -- </strong>
+
+            <span> Total course enrollments </span>
+          </div>
+        </section>
+
+        <!-- SUBJECTS -->
+
+        <section class="subjects-section">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow"> TEACHING </span>
+
+              <h2>My Subjects</h2>
+            </div>
+
+            <span class="subject-count" id="subjectCount"> -- subjects </span>
+          </div>
+
+          <div class="subject-grid" id="subjectGrid">
+            <div class="loading-state">Loading subjects...</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

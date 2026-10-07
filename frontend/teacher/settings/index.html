@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings | Student Hub</title>
+    <link rel="stylesheet" href="../dashboard/style.css" />
+    <style>
+      .settings-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="brand-icon">T</div>
+          <div>
+            <strong>Student Hub</strong>
+            <span>Teacher Portal</span>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <span class="nav-label">OVERVIEW</span>
+          <a href="../dashboard/index.html" class="nav-item">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-label">TEACHING</span>
+          <a href="../subjects/index.html" class="nav-item">
+            <span class="nav-icon">▣</span>
+            <span>My Subjects</span>
+          </a>
+          <a href="../enrollment/index.html" class="nav-item">
+            <span class="nav-icon">＋</span>
+            <span>Student Enrollment</span>
+          </a>
+          <a href="../attendance/index.html" class="nav-item">
+            <span class="nav-icon">◔</span>
+            <span>Attendance</span>
+          </a>
+          <a href="../results/index.html" class="nav-item">
+            <span class="nav-icon">◫</span>
+            <span>Marks & Results</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-label">STUDENTS</span>
+          <a href="../students/index.html" class="nav-item">
+            <span class="nav-icon">◎</span>
+            <span>My Students</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-label">ACCOUNT</span>
+          <a href="../profile/index.html" class="nav-item">
+            <span class="nav-icon">◉</span>
+            <span>My Profile</span>
+          </a>
+          <a href="index.html" class="nav-item active">
+            <span class="nav-icon">⚙</span>
+            <span>Settings</span>
+          </a>
+          <a href="#" class="nav-item logout-item" id="logoutBtn">
+            <span class="nav-icon">↪</span>
+            <span>Logout</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <span class="topbar-title">STUDENT MANAGEMENT SYSTEM</span>
+        </div>
+        <div class="topbar-profile">
+          <div class="profile-avatar" id="profileAvatar">T</div>
+          <div class="profile-info">
+            <strong id="teacherName">Loading...</strong>
+            <span id="teacherCode">Loading...</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="page-container">
+        <section class="page-header">
+          <span class="eyebrow">ACCOUNT</span>
+          <h1>Settings</h1>
+        </section>
+
+        <div class="settings-card">
+          <h3>System Settings</h3>
+          <p>No configurable settings at the moment.</p>
+        </div>
+      </main>
+    </div>
+
+    <script src="../profile/script.js"></script>
+  </body>
+</html>

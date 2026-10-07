@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enrollment | Student Hub</title>
+    <link rel="stylesheet" href="../dashboard/style.css" />
+    <style>
+      .course-selector {
+        margin-bottom: 2rem;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+      .course-selector select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        margin-top: 0.5rem;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .list-container {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        padding: 1.5rem;
+      }
+      .list-container h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .student-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .student-info strong {
+        display: block;
+        color: var(--text-primary);
+      }
+      .student-info span {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+      }
+      .btn-enroll, .btn-remove {
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        border: none;
+      }
+      .btn-enroll {
+        background: var(--primary);
+        color: white;
+      }
+      .btn-remove {
+        background: #fee2e2;
+        color: #ef4444;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="brand-icon">T</div>
+          <div>
+            <strong>Student Hub</strong>
+            <span>Teacher Portal</span>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <span class="nav-label">OVERVIEW</span>
+          <a href="../dashboard/index.html" class="nav-item">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-label">TEACHING</span>
+          <a href="../subjects/index.html" class="nav-item">
+            <span class="nav-icon">▣</span>
+            <span>My Subjects</span>
+          </a>
+          <a href="index.html" class="nav-item active">
+            <span class="nav-icon">＋</span>
+            <span>Student Enrollment</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-label">STUDENTS</span>
+          <a href="../students/index.html" class="nav-item">
+            <span class="nav-icon">◎</span>
+            <span>My Students</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <a href="#" class="nav-item logout-item" id="logoutBtn">
+            <span class="nav-icon">↪</span>
+            <span>Logout</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- APPLICATION -->
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <span class="topbar-title">STUDENT MANAGEMENT SYSTEM</span>
+        </div>
+        <div class="topbar-profile">
+          <div class="profile-avatar" id="profileAvatar">T</div>
+          <div class="profile-info">
+            <strong id="teacherName">Loading...</strong>
+            <span id="teacherCode">Loading...</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="page-container">
+        <section class="page-header">
+          <span class="eyebrow">TEACHING</span>
+          <h1>Student Enrollment</h1>
+        </section>
+
+        <section class="course-selector">
+          <label><strong>Select Subject / Course</strong></label>
+          <select id="courseSelect">
+            <option value="">-- Choose a course --</option>
+          </select>
+        </section>
+
+        <div class="grid-2" id="enrollmentSection" style="display: none;">
+          <div class="list-container">
+            <h3>Available Students</h3>
+            <div id="availableList">Loading...</div>
+          </div>
+          <div class="list-container">
+            <h3>Currently Enrolled</h3>
+            <div id="enrolledList">Loading...</div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
