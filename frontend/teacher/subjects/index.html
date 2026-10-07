@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Subjects | Student Hub</title>
+    <link rel="stylesheet" href="../dashboard/style.css" />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+      th, td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+      th {
+        background-color: #f9fafb;
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="brand-icon">T</div>
+          <div>
+            <strong>Student Hub</strong>
+            <span>Teacher Portal</span>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <span class="nav-label">OVERVIEW</span>
+          <a href="../dashboard/index.html" class="nav-item">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-label">TEACHING</span>
+          <a href="index.html" class="nav-item active">
+            <span class="nav-icon">▣</span>
+            <span>My Subjects</span>
+          </a>
+          <a href="../enrollment/index.html" class="nav-item">
+            <span class="nav-icon">＋</span>
+            <span>Student Enrollment</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-label">STUDENTS</span>
+          <a href="../students/index.html" class="nav-item">
+            <span class="nav-icon">◎</span>
+            <span>My Students</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <a href="#" class="nav-item logout-item" id="logoutBtn">
+            <span class="nav-icon">↪</span>
+            <span>Logout</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- APPLICATION -->
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <span class="topbar-title">STUDENT MANAGEMENT SYSTEM</span>
+        </div>
+        <div class="topbar-profile">
+          <div class="profile-avatar" id="profileAvatar">T</div>
+          <div class="profile-info">
+            <strong id="teacherName">Loading...</strong>
+            <span id="teacherCode">Loading...</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="page-container">
+        <section class="page-header">
+          <span class="eyebrow">TEACHING</span>
+          <h1>My Subjects</h1>
+        </section>
+
+        <section class="table-section">
+          <table id="subjectsTable">
+            <thead>
+              <tr>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Credits</th>
+                <th>Semester</th>
+              </tr>
+            </thead>
+            <tbody id="subjectsBody">
+              <tr>
+                <td colspan="4">Loading subjects...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

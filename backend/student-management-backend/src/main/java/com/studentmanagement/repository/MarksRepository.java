@@ -10,4 +10,6 @@ public interface MarksRepository extends JpaRepository<Marks, Integer> {
     List<Marks> findByStudentStudentId(Integer studentId);
 
     List<Marks> findByCourseCourseId(Integer courseId);
-}
+
+    Marks findByStudentStudentIdAndCourseCourseId(Integer studentId, Integer courseId);
+}

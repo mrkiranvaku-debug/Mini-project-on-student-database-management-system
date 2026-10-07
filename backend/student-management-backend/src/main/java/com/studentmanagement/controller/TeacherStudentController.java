@@ -71,4 +71,40 @@ public class TeacherStudentController {
                 )
         );
     }
+
+    @PostMapping
+    public ResponseEntity<Map<String, Object>>
+    createStudent(
+            @RequestParam Integer teacherId,
+            @RequestBody Map<String, String> request) {
+
+        String registerNumber = request.get("registerNumber");
+        String name = request.get("name");
+        String password = request.get("password");
+
+        return ResponseEntity.status(201).body(
+                teacherStudentService.createStudent(
+                        teacherId,
+                        registerNumber,
+                        name,
+                        password
+                )
+        );
+    }
+
+    @DeleteMapping("/{studentId}")
+    public ResponseEntity<Map<String, Object>>
+    deleteStudent(
+            @RequestParam Integer teacherId,
+            @PathVariable Integer studentId) {
+
+        teacherStudentService.deleteStudent(teacherId, studentId);
+        
+        return ResponseEntity.ok(
+                Map.of(
+                        "success", true,
+                        "message", "Student deleted successfully"
+                )
+        );
+    }
 }

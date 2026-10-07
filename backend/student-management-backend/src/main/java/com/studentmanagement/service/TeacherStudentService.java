@@ -229,6 +229,54 @@ public Map<String, Object> updateStudent(
 
     return response;
 }
+public Map<String, Object> createStudent(
+        Integer teacherId,
+        String registerNumber,
+        String name,
+        String password) {
+
+    if (registerNumber == null || registerNumber.trim().isEmpty()) {
+        throw new RuntimeException("Register number cannot be empty");
+    }
+
+    if (name == null || name.trim().isEmpty()) {
+        throw new RuntimeException("Student name cannot be empty");
+    }
+
+    if (password == null || password.trim().isEmpty()) {
+        throw new RuntimeException("Password cannot be empty");
+    }
+
+    if (studentRepository.findByRegisterNumber(registerNumber) != null) {
+        throw new RuntimeException("Student with this register number already exists");
+    }
+
+    Student student = new Student();
+    student.setRegisterNumber(registerNumber.trim());
+    student.setName(name.trim());
+    student.setPasswordHash(password);
+
+    Student savedStudent = studentRepository.save(student);
+
+    Map<String, Object> response = new LinkedHashMap<>();
+    response.put("studentId", savedStudent.getStudentId());
+    response.put("registerNumber", savedStudent.getRegisterNumber());
+    response.put("name", savedStudent.getName());
+
+    return response;
+}
+
+public void deleteStudent(Integer teacherId, Integer studentId) {
+    if (!isTeacherResponsibleForStudent(teacherId, studentId)) {
+        throw new RuntimeException("Teacher is not authorized to delete this student");
+    }
+    
+    Student student = studentRepository.findById(studentId)
+            .orElseThrow(() -> new RuntimeException("Student not found"));
+            
+    studentRepository.delete(student);
+}
+
 private boolean isTeacherResponsibleForStudent(
         Integer teacherId,
         Integer studentId) {

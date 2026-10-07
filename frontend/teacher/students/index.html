@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Students | Student Hub</title>
+  <link rel="stylesheet" href="../dashboard/style.css" />
+  <link rel="stylesheet" href="../shared.css" />
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-brand">
+        <div class="brand-icon">T</div>
+        <div><strong>Student Hub</strong><span>Teacher Portal</span></div>
+      </div>
+      <button class="close-sidebar" id="closeSidebar">✕</button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <span class="nav-label">OVERVIEW</span>
+        <a href="../dashboard/index.html" class="nav-item">
+          <span class="nav-icon">🏠</span><span>Dashboard</span>
+        </a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-label">TEACHING</span>
+        <a href="../subjects/index.html" class="nav-item">
+          <span class="nav-icon">📚</span><span>My Subjects</span>
+        </a>
+        <a href="../enrollment/index.html" class="nav-item">
+          <span class="nav-icon">📋</span><span>Student Enrollment</span>
+        </a>
+        <a href="../attendance/index.html" class="nav-item">
+          <span class="nav-icon">📅</span><span>Attendance</span>
+        </a>
+        <a href="../results/index.html" class="nav-item">
+          <span class="nav-icon">📊</span><span>Marks &amp; Results</span>
+        </a>
+        <a href="../courses/index.html" class="nav-item">
+          <span class="nav-icon">🗂️</span><span>Course Management</span>
+        </a>
+        <a href="../departments/index.html" class="nav-item">
+          <span class="nav-icon">🏫</span><span>Department Management</span>
+        </a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-label">STUDENTS</span>
+        <a href="index.html" class="nav-item active">
+          <span class="nav-icon">👥</span><span>My Students</span>
+        </a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-label">ACCOUNT</span>
+        <a href="../profile/index.html" class="nav-item">
+          <span class="nav-icon">👤</span><span>My Profile</span>
+        </a>
+        <a href="../settings/index.html" class="nav-item">
+          <span class="nav-icon">⚙️</span><span>Settings</span>
+        </a>
+        <a href="#" class="nav-item logout-item" id="logoutBtn">
+          <span class="nav-icon">🚪</span><span>Logout</span>
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-btn" id="menuButton">☰</button>
+        <span class="topbar-title">STUDENT MANAGEMENT SYSTEM</span>
+      </div>
+      <div class="topbar-profile">
+        <div class="profile-avatar" id="profileAvatar">T</div>
+        <div class="profile-info">
+          <strong id="teacherName">Loading...</strong>
+          <span id="teacherCode">Loading...</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-container">
+      <section class="page-header">
+        <span class="eyebrow">STUDENTS</span>
+        <h1>My Students</h1>
+      </section>
+
+      <div id="alertBox" class="alert"></div>
+
+      <div class="toolbar">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search by name or register number…" />
+        <button class="btn btn-primary" id="addStudentBtn">+ Add Student</button>
+      </div>
+
+      <div class="table-card">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Register No.</th>
+                <th>Name</th>
+                <th>Enrolled Courses</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="studentsBody">
+              <tr class="state-row"><td colspan="4">Loading students…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ADD MODAL -->
+  <div class="modal-backdrop" id="addModal">
+    <div class="modal-box">
+      <h2>Add New Student</h2>
+      <div class="form-group">
+        <label>Register Number</label>
+        <input type="text" id="addRegNum" placeholder="e.g. 2026CSE003" />
+      </div>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="addName" placeholder="Student name" />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="addPassword" placeholder="Initial password" />
+      </div>
+      <div class="modal-actions">
+        <button class="btn" id="addCancelBtn">Cancel</button>
+        <button class="btn btn-primary" id="addSaveBtn">Add Student</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT MODAL -->
+  <div class="modal-backdrop" id="editModal">
+    <div class="modal-box">
+      <h2>Edit Student</h2>
+      <input type="hidden" id="editStudentId" />
+      <div class="form-group">
+        <label>Register Number</label>
+        <input type="text" id="editRegNum" />
+      </div>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="editName" />
+      </div>
+      <div class="modal-actions">
+        <button class="btn" id="editCancelBtn">Cancel</button>
+        <button class="btn btn-primary" id="editSaveBtn">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
